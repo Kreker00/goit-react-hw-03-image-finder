@@ -15,7 +15,7 @@ export class App extends Component {
     dataImages: [],
     searchQuery: '',
     page: 1,
-    per_page: 12,
+
     isLoading: false,
     error: false,
     showModal: false,
@@ -68,14 +68,9 @@ export class App extends Component {
   };
 
   handleLoadMore = () => {
-    this.setState(
-      prevState => ({
-        page: prevState.page + 1,
-      }),
-      () => {
-        scroll.scrollToBottom();
-      }
-    );
+    this.setState(prevState => ({
+      page: prevState.page + 1,
+    }));
   };
 
   handleOpenModal = image => {
